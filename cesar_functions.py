@@ -1,3 +1,4 @@
+from os import system
 """
 Funciones y valores utilizados en el codigo cesar
 """
@@ -74,7 +75,7 @@ def recompose_list_string(new_index_list,var_list):
       initial_index=index[1]
       while True:        
         correctect_index=initial_index-(len(var_list[index[0]]))
-        if correctect_index<=len(var_list[index[0]]):
+        if correctect_index<=(len(var_list[index[0]])-1):
             recompose.append(var_list[index[0]][correctect_index])   
             break   
         initial_index=correctect_index
@@ -108,17 +109,43 @@ def concatenate_list(list_strings):
         result+=i
     return result
 
+def input_str():
+   while True:
+     system("cls")
+     string=input("¿Qué deseas cifrar? ")
+     if string!="":
+        break
+   return string
 
+def input_int():
+ while True:
+    try:
+        num=int(input("¿Qué clave deseas darle? "))
+        return num
+    except ValueError:
+     system("cls")
+     print("Por favor seleccione un número válido ")     
+ 
+
+      
 def cesar():
  """ Le pide al usuario una cadena"""
- string=input("¿Qué deseas cifrar? ").lower()
- move=int(input("¿Cuanto nos desplazamos? "))
+ string=input_str()
+ move=input_int()
  original_index=index_list_strings(to_list(string),list_of_variables)
  new_index=move_index(original_index,move)
  return concatenate_list(recompose_list_string(new_index,list_of_variables))
+
+
+def decode_cesar():
+   string=input("¿Qué deseas descifrar? ").lower()
+   move_origin=int(input("¿Cual es el código de desencriptado? "))
+   move=move_origin*-1
+   original_index=index_list_strings(to_list(string),list_of_variables)
+   new_index=move_index(original_index,move)
+   return concatenate_list(recompose_list_string(new_index,list_of_variables))
+
  
-
-
 
 
  

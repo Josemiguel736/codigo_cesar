@@ -13,6 +13,7 @@ en el alfabeto
 -rehacer la cadena con una nueva
 
 """
-from cesar_functions import cesar
+from cesar_functions import cesar,decode_cesar
 if __name__=="__main__":
+    
     print(cesar())

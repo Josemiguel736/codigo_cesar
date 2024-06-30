@@ -16,11 +16,11 @@ def test_move_index():
     assert move_index([[0,0],[1,2]],3)==[[0,3],[1,5]]
 
 def test_recompose_list_string():
-    assert recompose_list_string([[0,1],[1,5]],list_of_variables)==["b","u"]
-    assert recompose_list_string([[0,27],[3,5]],list_of_variables)==["z","5"]
-    assert recompose_list_string([[0,-1],[3,5]],list_of_variables)==["z","5"]
-    assert recompose_list_string([[0,28],[3,5]],list_of_variables)==["a","5"]
-    assert recompose_list_string([[0,-28],[3,5]],list_of_variables)==["z","5"]
+    assert recompose_list_string([[0,1],[1,5]],list_of_variables)==["b","a"]
+    assert recompose_list_string([[0,27],[3,5]],list_of_variables)==["a","6"]
+    assert recompose_list_string([[0,-1],[3,4]],list_of_variables)==["z","5"]
+    assert recompose_list_string([[0,28],[3,9]],list_of_variables)==["b","0"]
+    assert recompose_list_string([[0,-28],[3,0]],list_of_variables)==["z","1"]
 
 def test_concatenate_list():
     assert concatenate_list(["h","o","l","a"])=="hola"
