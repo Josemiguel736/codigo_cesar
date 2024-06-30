@@ -3,8 +3,8 @@ Funciones y valores utilizados en el codigo cesar
 """
 list_of_variables=[["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", 
 "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w" ,"x", "y", "z"],["á","é","í","ó","u","a","e","i","o","u"],
-[".",",","!","¡",":","@","[","]","-","+","€"," "],
-["1","2","3","4","5","6","7","8","9","0","-1","-2","-3","-4","-5","-6","-7","-8","-9","-0"]]
+[".",",","!","¡",":","@","[","]","-","+","€"," ","="],
+["1","2","3","4","5","6","7","8","9","0"]]
 
 
 
@@ -75,7 +75,7 @@ def recompose_list_string(new_index_list,var_list):
       while True:        
         correctect_index=initial_index-(len(var_list[index[0]]))
         if correctect_index<=len(var_list[index[0]]):
-            recompose.append(var_list[index[0]][correctect_index-1])   
+            recompose.append(var_list[index[0]][correctect_index])   
             break   
         initial_index=correctect_index
 
